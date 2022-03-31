@@ -2,6 +2,10 @@ package com.example.powermokito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
@@ -69,6 +73,34 @@ class PowerMokitoExampleApplicationTests {
 		Mockito.verify(powerMockExample1).finalExample(name);
 		assertEquals(name, result);
 
+	}
+	
+	@Before
+	public void beforeTest() {
+		System.out.println("********before*");
+		
+	}
+	@Test
+	public void test() {
+		System.out.println("********test*");
+		
+	}
+	@After
+	public void afterTest() {
+		System.out.println("********after*");
+		
+	}
+	@AfterClass
+	public static String afterClassTest() {
+		System.out.println("********afterclass*");
+		return null;
+		
+	}
+	//it is used to execute huge code before each test also it is preferable to execute only once before running all tests
+	@BeforeClass
+	public static void beforeClassTest() {
+		System.out.println("********beforeclass*");
+		
 	}
 
 }
