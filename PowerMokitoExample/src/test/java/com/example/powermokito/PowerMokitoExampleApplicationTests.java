@@ -3,6 +3,7 @@ package com.example.powermokito;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -47,6 +48,26 @@ class PowerMokitoExampleApplicationTests {
 		assertEquals(success, result);
 		
 		PowerMockito.verifyPrivate(getClass());	
+
+	}
+	
+	@Test
+	public void finalMethodTest() throws Exception {
+		String name = "TalentSprint";
+
+		PowerMockExample powerMockExample = PowerMockito.mock(PowerMockExample.class);
+
+		PowerMockito.whenNew(PowerMockExample.class).withNoArguments().thenReturn(powerMockExample);
+
+		PowerMockExample powerMockExample1 = new PowerMockExample();
+
+		PowerMockito.verifyNew(PowerMockExample.class).withNoArguments();
+
+		PowerMockito.when(powerMockExample1.finalExample(name)).thenReturn(name);
+
+		String result = powerMockExample1.finalExample(name);
+		Mockito.verify(powerMockExample1).finalExample(name);
+		assertEquals(name, result);
 
 	}
 

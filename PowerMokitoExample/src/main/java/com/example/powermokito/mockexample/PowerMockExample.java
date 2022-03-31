@@ -13,5 +13,9 @@ public class PowerMockExample {
 	public String exampleForPrivate(String name) {
 		return powerMockPrivate(name);
 	}
+	
+	public final String finalExample(String name) {
+		return name;
+	}
 
 }
