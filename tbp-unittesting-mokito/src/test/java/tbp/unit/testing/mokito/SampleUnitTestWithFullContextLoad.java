@@ -27,8 +27,9 @@ public class SampleUnitTestWithFullContextLoad {
 
 	@Test
 	public void getUserIdTest() {
-		String id = service.getUseruserIdByName("Raviteja Pullamsetty");
-		assertEquals("123445Raviteja Pullamsetty", id);
+		String id = service.getUseruserIdByName("TalentSprint");
+		//id=Raviteja Pullamsetty
+		assertEquals("12345TalentSprint", id);
 
 	}
 

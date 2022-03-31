@@ -28,9 +28,9 @@ public class UnitTestingWithMockito {
 
 	@Test
 	public void getUserIdTest() {
-		when(dao.getUserId("Raviteja Pullamsetty")).thenReturn("123445Raviteja Pullamsetty");
-		String id = service.getUseruserIdByName("Raviteja Pullamsetty");
-		assertEquals("123445Raviteja Pullamsetty", id);
+		when(dao.getUserId("TalentSprint")).thenReturn("12345TalentSprint");
+		String id = service.getUseruserIdByName("TalentSprint");
+		assertEquals("12345TalentSprint", id);
 
 	}
 

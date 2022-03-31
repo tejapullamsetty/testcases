@@ -17,7 +17,7 @@ public class SimpleJunitTest {
 	@Test
 	public void getIdTest() {
 		// Create the Object and call the method
-		assertEquals(10, 10);
+		assertEquals(1, 1);
 	}
 
 	@BeforeAll

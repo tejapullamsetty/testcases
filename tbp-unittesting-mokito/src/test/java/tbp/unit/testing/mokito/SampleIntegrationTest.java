@@ -18,7 +18,7 @@ import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
 /**
- * @author rajan
+ * @author RT
  *
  */
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -34,18 +34,15 @@ public class SampleIntegrationTest {
 	@Test
 	public void getAdharTest() {
 
-		String url = "http://localhost:" + port + "/v1/user.get"; // ?adharNo=adhar-rajani-1234"
-		System.out.println("**************************"+url);
+		String url = "http://localhost:" + port + "/v1/user.get";// ?userName=TalentSprint
 
 		UriComponents builder = UriComponentsBuilder.fromHttpUrl(url)
-				.queryParam("userName", "adhar-Pradhan-1234")
+				.queryParam("userName", "TalentSprint")
 				.build();
-		System.out.println("**************************"+builder.toString());
 		HttpEntity<String> requestEntity = new HttpEntity<>(null, null);
 		ResponseEntity<String> response = testRestTemplate.exchange(builder.toString(), HttpMethod.GET, requestEntity,
 				String.class);
-		System.out.println("**************************"+response.getBody());
-
+		System.out.println("*******response.getStatusCode()********"+response.getStatusCode());
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 
 	}
